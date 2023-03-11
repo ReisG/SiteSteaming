@@ -23,8 +23,8 @@ function animate()
 {
     requestAnimationFrame(animate);
 
-    cube.rotate.x += 1;
-    cube.rotate.y += 1;
+    cube.rotation.x += 1;
+    cube.rotation.y += 1;
 
     renderer.render(scene, camera);
 }
