@@ -12,20 +12,6 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
 
-/*
-const geometry = new THREE.CapsuleGeometry(
-    9, // radius
-    14, // length
-    15, // capSubdividions
-    7 // radial segments
-);/
-
-/*
-const geometry = new THREE.BoxGeometry(1, 1, 1); 
-const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
-const capsule = new THREE.Mesh(geometry, material);
-scene.add(capsule);
-*/
 const geometry = THREE.BoxGeometry(1, 1, 1);/*new THREE.SphereGeometry( 15, 32, 16 );*/
 const material = new THREE.MeshBasicMaterial( { color: 0xffff00 } );
 const sphere = new THREE.Mesh( geometry, material );
