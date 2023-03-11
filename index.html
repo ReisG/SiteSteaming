@@ -27,7 +27,7 @@
 
         const textureloader = new THREE.TextureLoader();
 
-        const texture = textureloader.load("web/texture.png");
+        const texture = textureloader.load("source/texture.png");
 
         const geometry = new THREE.TorusKnotGeometry( 10, 3, 100, 16 );
         const material = new THREE.MeshBasicMaterial({ map:texture/*color: 0xffff00*/ });
