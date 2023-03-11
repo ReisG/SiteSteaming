@@ -22,6 +22,10 @@ camera.position.z = 5;
 function animate()
 {
     requestAnimationFrame(animate);
+
+    cube.rotate.x += 1;
+    cube.rotate.y += 1;
+
     renderer.render(scene, camera);
 }
 
