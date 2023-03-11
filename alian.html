@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>WebGL Ellipsoid</title>
+    <meta charset="utf-8">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        // Create the scene and the camera
+        var scene = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        // Create the renderer
+        var renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+        var textureLoader = new THREE.TextureLoader();
+        var texture = textureLoader.load('/web/texture.png');
+
+        // Create the ellipsoid
+        var geometry = new THREE.SphereGeometry(1, 64, 64);
+
+        geometry.scale(2, 1, 1); // Scale in the x direction to create an ellipsoid
+        var material = new THREE.MeshBasicMaterial({ color: 0xff0077 });
+        var ellipsoid = new THREE.Mesh(geometry, material);
+        scene.add(ellipsoid);
+
+        // Position the camera
+        camera.position.z = 5;
+
+        // Animate the ellipsoid
+        function animate() {
+            requestAnimationFrame(animate);
+            ellipsoid.rotation.x += 0.01;
+            ellipsoid.rotation.y += 0.01;
+            renderer.render(scene, camera);
+        }
+        animate();
+    </script>
+</body>
+
+</html>
