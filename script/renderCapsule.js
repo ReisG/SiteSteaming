@@ -43,15 +43,4 @@ function animate()
     renderer.render(scene, camera);
 }
 
-if ( WebGL.isWebGLAvailable() ) {
-
-	// Initiate function or other initializations here
-	animate();
-
-} else {
-
-    alert("Well");
-	const warning = WebGL.getWebGLErrorMessage();
-	document.getElementById( 'container' ).appendChild( warning );
-
-}
+animate();
