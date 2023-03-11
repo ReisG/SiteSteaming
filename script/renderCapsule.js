@@ -26,10 +26,10 @@ const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
 const capsule = new THREE.Mesh(geometry, material);
 scene.add(capsule);
 */
-const geometry = new THREE.CapsuleGeometry( 1, 1, 4, 8 );
-const material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
-const capsule = new THREE.Mesh( geometry, material );
-scene.add( capsule );
+const geometry = new THREE.SphereGeometry( 15, 32, 16 );
+const material = new THREE.MeshBasicMaterial( { color: 0xffff00 } );
+const sphere = new THREE.Mesh( geometry, material );
+scene.add( sphere );
 
 camera.position.z = 5;
 
@@ -37,8 +37,8 @@ function animate()
 {
     requestAnimationFrame(animate);
 
-    capsule.rotation.x += 0.01;
-    capsule.rotation.y += 0.01;
+    sphere.rotation.x += 0.01;
+    sphere.rotation.y += 0.01;
 
     renderer.render(scene, camera);
 }
