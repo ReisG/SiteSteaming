@@ -50,6 +50,7 @@ if ( WebGL.isWebGLAvailable() ) {
 
 } else {
 
+    alert("Well");
 	const warning = WebGL.getWebGLErrorMessage();
 	document.getElementById( 'container' ).appendChild( warning );
 
