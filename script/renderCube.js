@@ -29,4 +29,7 @@ function animate()
     renderer.render(scene, camera);
 }
 
-animate();
+while (True)
+{
+    animate();
+}
